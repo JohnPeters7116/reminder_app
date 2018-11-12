@@ -56,7 +56,7 @@ $( "form" ).submit(function( event ) {
       }
 
 
-      $.post("https://glacial-cliffs-39893.herokuapp.com/reminders",
+      let posting = $.post("https://glacial-cliffs-39893.herokuapp.com/reminders",
         {
           "text": "internet test",
           "to": "447716267455",
@@ -64,6 +64,8 @@ $( "form" ).submit(function( event ) {
           "when": "2019-11-13T16:10:11.323Z"
         }
       )
+
+      posting.done(function (data) => console.log({data}))
 
        return
     }
