@@ -65,7 +65,9 @@ $( "form" ).submit(function( event ) {
         }
       )
 
-      posting.done(function (data) => console.log({data}))
+      posting.done(function (data){
+        console.log({data}))
+      }
 
        return
     }
