@@ -17,20 +17,21 @@
     <div>
       <h1>Remind'Ya'Self</h1>
       <img class="img-circle" src="https://storage.googleapis.com/sales.appinst.io/2016/07/When-Push-Comes-to-Shove-Mobile-Marketing-Through-App-Notifications.png" alt="Bird">
-      <h3>Fill in the details below to send yourself a reminder text in the future</h3>
+      <div class="header">
+        <h3 class="form-group instructions">Fill in the details below to send yourself a reminder text in the future</h3>
+      </div>
     </div>
     <div>
       <div class="container-fluid bg-1 text-center form-area">
         <div class="row">
           <div class="form-group col-md-6">
-            <h3 id="title">Phone number:</h3>
-            <input class="item"type="phone" name="number" id="number"placeholder="12 digit phone number">
+            <h3 id="title">Phone number(+44) :</h3>
+            <input class="item"type="phone" name="number" id="number"placeholder="+44 7911 123456">
             <p class="error"id="numberError"></p>
           </div>
           <div class="form-group col-md-6">
             <h3>Reminder:</h3>
-            <textarea class="item" type="phone" name="number" id="text" placeholder="eg. Pickup groceries"/>
-            </textarea>
+            <input class="item" type="phone" name="number" id="text" placeholder="eg. Pickup groceries"/>
             <p class="error" id="textError"></p>
           </div>
           <div class="form-group col-md-6">
@@ -39,7 +40,7 @@
           <p class="error" id="fromError"></p>
           </div>
           <div class="form-group col-md-6">
-            <h3>When:</h3>
+            <h3>When: </h3>
             <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
               <input type="text" class="form-control datetimepicker-input datetimepicker" data-target="#datetimepicker1" name="departure_date" />
               <span class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">

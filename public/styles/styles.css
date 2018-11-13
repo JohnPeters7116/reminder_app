@@ -11,9 +11,24 @@ img {
   width: 400px;
 }
 
+.fa-calendar {
+  font-size: 20px;
+}
 
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center
+}
+.instructions {
+  width: 50%
+}
 .item {
-  min-width: 250px;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .cont {
