@@ -3,84 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>submit demo</title>
-  <style>
-  p {
-    margin: 0;
-    color: blue;
-  }
-  div,p {
-    margin-left: 10px;
-  }
-  span {
-    color: red;
-  }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="./JS/jquery.js"></script>
+  <script src="./JS/logic.js"></script>
 </head>
+
 <body>
 <h1>Remind'Ya'Self</h1>
 <p>Fill in the details below to send yourself a reminder text in the future</p>
-<form action="javascript:alert( 'Reminder Sent!' );">
-{{!-- <form action="javascript:alert( 'Reminder Sent!' );"> --}}
-  <div>
-    Phone number: <input type="phone" name="number" id="number"><br>
-    <p id="numberError"></p>
-    ReminderText: <input type="text" name="text" id="text"><br>
-    <p id="textError"></p>
-    <input type="submit" value="Submit" id="submit">
-  </div>
-</form>
-
-<script>
-  const validate = () => {
-    const errors = {}
-    if ($("#number").val().match(/\d/g).length !== 12){
-      errors.numberError = 'Invalid Phone Number'
-    }
-    if ($("#text").val().length === 0) {
-      errors.textError = 'Input a message'
-    }
-    return errors
-  }
-
-$( "form" ).submit(function( event ) {
-    const errors = validate()
-    console.log({errors})
-    if (Object.keys(errors).length !== 0) {
-      if (errors.numberError){
-         $("p").text('error').show().fadeOut(1000);
-         $("p").text('error').show().fadeOut(1000);
-      }
-      if (errors.textError){
-         $("#textError").text(errors.textError).show().fadeOut(1000);
-      }
-
-      $.ajax({
-        url: 'https://glacial-cliffs-39893.herokuapp.com/reminders',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        type: "POST",
-        dataType: "json",
-        data: {
-        },
-        success: function (result) {
-          console.log({result});
-        },
-        error: function () {
-          console.log("error");
-        }
-      });
-
-       return
-    }
-
-    console.log($("#number").val())
-    console.log($("#text").val())
-
-  event.preventDefault();
-});
-</script>
-
+    <div>
+      Phone number: <input type="phone" name="number" id="number"><br>
+      <p id="numberError"></p>
+      ReminderText: <input type="text" name="text" id="text"><br>
+      <p id="textError"></p>
+    </div>
+    <button id="send">Send</button>
 </body>
 </html>
