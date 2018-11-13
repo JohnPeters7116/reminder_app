@@ -1,0 +1,29 @@
+.bg-1 {
+  background-color: #1abc9c;
+}
+
+.form-area {
+  width: 60%;
+}
+
+img {
+  height: 200px;
+  width: 400px;
+}
+
+.item {
+  min-width: 250px;
+}
+
+.cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+button {
+  width: 25%;
+
+}

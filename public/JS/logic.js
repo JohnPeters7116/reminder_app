@@ -5,7 +5,14 @@ $(document).ready(function () {
   $("button").click(function () {
     console.log($("#number").val())
     // console.log(validate())
-    sendData()
+    const message = {
+      "text": $("#text").val(),
+      "to": $("#number").val(),
+      "from": $("#from").val(),
+      "when": new Date($("#datetimepicker1").data().date).toISOString()
+    }
+    // console.log({message})
+    sendData(message)
   });
 
   const validate = () => {
@@ -20,14 +27,8 @@ $(document).ready(function () {
   }
 })
 
-function sendData() {
+function sendData(message) {
   var XHR = new XMLHttpRequest()
-  var message = {
-    "text": "test from computer",
-    "to": "447716267455",
-    "from": "John Peters",
-    "when": "2018-11-13T16:10:11.323Z"
-  }
 
   console.log({message})
 
@@ -49,7 +50,7 @@ function sendData() {
   };
 
   // Set up our request
-  XHR.open("POST", "https://glacial-cliffs-39893.herokuapp.com/reminders");
+  XHR.open("POST", "https://cors-anywhere.herokuapp.com/https://glacial-cliffs-39893.herokuapp.com/reminders");
 
   // The data sent is what the user provided in the form
   XHR.setRequestHeader("Content-Type", "application/json");
